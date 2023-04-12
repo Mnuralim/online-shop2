@@ -65,10 +65,7 @@ export const getAllProducts = async (req, res) => {
       .sort({ [sorting]: 1 })
       .select(fields);
 
-    res.status(200).json({
-      message: "success",
-      data: data,
-    });
+    res.status(200).json(data);
   } catch (error) {
     res.status(500).json({ message: error.message });
   }
